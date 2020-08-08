@@ -22,13 +22,132 @@
                     我们还需要向form中添加不同的表单项 
             -->
 
-            <!-- 使用input来创建一个文本框，它的type属性是text -->
-            用户名<input type="text"/>
+            <!-- 
+                在表单中可以使用fieldset来为表单项进行分组
+                可以将表单项中的同一组放到一个fieldset中
+            -->
+
+
+            <fieldset>
+
+            <!-- 在fieldset中可以使用legend来表示分组子标签的信息 -->
+                <legend>个人信息</legend>
+
 
             <!-- 
-                提交按钮可以将表单中的信息提交给服务器
-                使用input创建一个提交按钮 
+                使用input来创建一个文本框，它的type属性是text 
+                    如果细微表单项中的数据会提交到服务器中，还必须给表单项指定一个name属性
+                    name表示提交内容的名字
+
+                用户填写的信息会附在url地址的后边以查询字符串的形式发送给服务器
+                    url地址?查询字符串
+                格式：
+                    属性名=属性值&属性名=属性值&属性名=属性值
+                在文本框中也可以指定value值，该值将会作为文本框的默认值显示
             -->
+
+            <!--
+                在html中还为我们提供了一个标签，专门用来选中表单中的提示文字的
+                label中
+                该标签可以指定一个for属性，该属性的值需要指定一个表单项的id值
+            -->
+                <label for="um">用户名</label>
+                <input id="um" type="text" name="username"/>
+                <br><br> 
+            <!-- 用户名<input type="text" name="hello"> -->
+
+            <!-- 
+                密码框
+                    - 使用input创建一个密码框，它的type属性为password
+            -->
+                <label for="pwd">密码：</label>
+                <input id="pwd" type="password" name="password"/>
+
+            
+
+            <br><br>
+        
+            <!-- 
+                提交按钮可以将表单中的信息提交给服务器
+                使用input创建一个提交按钮,它的type属性是submit 
+                在提交按钮中可以通过value属性来自定义文字
+            -->
+            <!-- 
+                单选按钮
+                    - 使用input来创建一个单选按钮
+                    - 单选按钮通过name属性分组，name属性相同是一组按钮
+                    - 像这种需要用户选择但是不需要用户直接填写内容的表单项
+                        还必须指定一个value属性，这样被选中的表单项的value属性值将会最终提交给服务器
+                    如果希望在单选按钮或者是多选框中指定默认选中的选项，添加checked="checked"
+            -->
+                性别：<input type="radio" name="gender" value="male" id="male"/> <label for="male">男</label>
+                     <input type="radio" name="gender" value="female" id="female"/> <label for="female">女</label>
+            
+                </fieldset>
+            
+                 <br><br>
+
+            <!-- 
+                多选框
+                    -使用input创建一个多选框，它的type属性使用checkbox 
+            -->
+            爱好:<input type="checkbox" name="hobby" id="zq">足球
+                <input type="checkbox" name="hobby" id="lq">篮球
+                <input type="checkbox" name="hobby" id="yy">游泳
+                <input type="checkbox" name="hobby" id="qj" checked>拳击
+                <input type="checkbox" name="hobby" id="sd" checked>散打
+                
+            <br><br>
+
+            <!-- 
+                下拉列表
+                    - 使用select来创建下来列表
+                    下拉列表的name属性需要指定给select，而value属性给option
+                    可以通过在option中添加selected="selected"来将选项设置为默认选中
+
+                    当为select添加一个multiple,则下拉列表变成一个多选的下拉列表
+            -->
+
+            你喜欢的明星：
+            <select name="Star" id="mx">
+                <!-- 
+                    在select中可以使用optgroup对选项进行分组
+                        同一个optgroup中的选项是一组
+                 -->
+                <optgroup label="女明星">
+                    <option value="fbb">范冰冰</option>
+                    <option value="lxr">林心如</option>
+                    <option value="zw" selected="selected">赵薇</option>
+                </optgroup>
+                <optgroup label="男明星">
+                    <option value="fbb">刘德华</option>
+                    <option value="lxr">张学友</option>
+                    <option value="zbs" selected="selected">赵本山</option>
+                </optgroup>
+            </select>
+            <br><br>
+
+            <!-- 使用textarea -->
+            自我介绍
+            <br>
+            <textarea name="info" id="self" cols="30" rows="30"></textarea>
+            <br><br>
+                
+            <input type="submit" value="注册"/>
+            <!-- input中type为reset，可以重置表单中的信息 -->
+            <input type="reset">
+
+            <!-- input中type为button，可以生成一个按钮，单纯的按钮 -->
+            <input type="button" value="按钮">
+
+            <!-- 
+                除了使用input，也可以使用button标签创建按钮 
+                这种方式和使用input类似，只不过它是成对出现的
+            -->
+            <br><br>
+            <button type="submit">提交</button>
+            <button type="reset">重置</button>
+            <button type="button">按钮</button>
         </form>
 </body>
 </html>
