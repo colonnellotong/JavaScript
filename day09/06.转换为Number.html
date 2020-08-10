@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    /* 
+      将其他的类型转换为Number
+          转换方式一：
+              使用Number()函数
+                  - 字符串 --> 数字
+                      1.如果是纯数字字符串，则直接转换为数字
+                      2.如果字符串中有非字符串内容，则转换为NaN
+                      3.如果字符串时空串或者时一个全是空格的字符串，则转换为"0"
+
+                  - 布尔 --> 数字
+                      true 转成 1
+                      false 转成 0
+                  - Null --> 数字 0
+
+                  - Undefined --> NaN
+    */
+
+
+    var a = "123";
+
+    // 调用Number()函数来将a转换为Number类型
+    a = Number(a);
+
+
+    console.log(typeof a);      //number
+    console.log(a);             //123
+
+    var b = "abc";
+    
+    // 将非字符串内容转换为Number，则返回为NaN
+    b = Number(b);
+
+    console.log(typeof b);      //number
+    console.log(b);             //NaN
+
+    var c = "";
+
+    // 将空字符串内容转换为Number，则返回为"0"，多个空格也一样
+    c = Number(c);
+
+    console.log(typeof c);      //number
+    console.log(c);             //0
+
+    var d = true;
+    //将true转换为1
+    d = Number(d);
+
+    console.log(typeof d);       //number
+    console.log(d);              //1
+
+    var e = false;
+    //将false转换为0
+    e = Number(e);
+
+    console.log(typeof e);      //number
+    console.log(e);             //0
+
+    var f = null;
+
+    f = Number(f);
+
+    console.log(typeof f);      //number
+    console.log(f);             //0
+
+    var g = undefined;
+
+    g = Number(g);
+
+    console.log(typeof g);      //number
+    console.log(g);             //NaN
+
+
+    var h = "123px";
+
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
