@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      // 将其他的数据类型转换为Boolean
+      //  - 使用Boolean()函数
+      //  - 数字 --> 布尔
+      //     - 除了0和NaN，全是true
+      //  - 字符串 --> 布尔
+      //     - 除了空串，其余都是true
+      //  - null --> 布尔 false
+      //  - undefined --> 布尔 false
+      //  - 对象也会转换为true
+
+      var a = 123;
+
+      //调用Boolean()函数来将a转换为布尔值
+      a = Boolean(a);
+
+      console.log(typeof a);//boolean
+      console.log(a);       //true
+
+      var b = -123;
+
+      b = Boolean(b);
+
+      console.log(typeof b);//boolean
+      console.log(b);       //true
+
+      var c = 0;
+
+      c = Boolean(c);
+
+      console.log(typeof c);//boolean
+      console.log(c);       //false
+
+      var d = Infinity;
+
+      d = Boolean(d);
+
+      console.log(typeof d);//boolean
+      console.log(d);       //true
+
+      var e = NaN;
+
+      e = Boolean(e);
+
+      console.log(typeof e);//boolean
+      console.log(e);       //false
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

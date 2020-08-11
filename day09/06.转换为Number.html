@@ -21,6 +21,11 @@
                   - Null --> 数字 0
 
                   - Undefined --> NaN
+
+          转换方式二：
+              - 这种方式专门用来对付字符串
+              - parseInt()  把一个字符串转换为一个整数
+              - parseFloat()  把一个字符串转换为一个浮点数
     */
 
 
@@ -80,7 +85,32 @@
 
     var h = "123px";
 
-    
+    // 调用parseInt()函数将h转换为Number
+
+    // parseInt()可以将一个字符串中的有效的整数内容取出来，
+    //   然后转换为Number
+    h = parseInt(h);
+
+    console.log(typeof h);
+    console.log(h);
+
+    var i = "123.456px";
+
+    // parseFloat()作用和parseInt()类似，不同的时它可以获得有效的小数内容
+    i = parseFloat(i);
+
+    console.log(typeof i);
+    console.log(i);
+
+
+    // 如果对非String使用parseInt()或parseFloat()
+    //   它会先将其转化为String，然后再操作
+    var j = true;
+
+    j = parseInt(j);
+
+    console.log(typeof j);
+    console.log(j);
   </script>
 </head>
 <body>
