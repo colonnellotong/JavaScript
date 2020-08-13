@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      && || 非布尔值的情况
+       - 对于飞布尔值进行与或运算时，
+            会先将其转换为布尔值，然后再运算，并且返回原值
+       - 与运算：
+          - 如果第一个值为true，则必然返回第二个值
+          - 如果第一个值为false，则直接返回第一个值
+
+       - 或运算：
+          - 如果第一个值为false，则必然返回第二个值
+          - 如果第一个值为true，则直接返回第一个值
+    |
+    */
+
+    //true && true
+    //与运算：如果两个值，都为true，则返回后面的
+    var a = 1 && 2;
+
+    //与运算：如果两个值中有false，则返回靠前的false
+    //false && true
+    var b = 0 && 2;
+    var c = 2 && 0;
+    //false && false
+    var d = NaN && 0;
+    var e = 0 && NaN;
+
+    console.log("a = " + a);
+    console.log("b = " + b);
+    console.log("c = " + c);
+    console.log("d = " + d);
+    console.log("e = " + e);
+
+
+    //true || true
+    //如果第一个值为true，则直接返回第一个值
+    var f = 2 || 1;
+    var g = 2 || NaN;
+    var h = 2 || 0;
+    //如果第一个值为false，则直接返回第二个值
+    var i = NaN || 1;
+    var j = NaN || 0;
+
+
+    console.log("f = " + f);
+    console.log("g = " + g);
+    console.log("h = " + h);
+    console.log("i = " + i);
+    console.log("j = " + j);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
