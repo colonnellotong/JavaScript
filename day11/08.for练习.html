@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*
+      打印1-100之间所有7的倍数的个数及总和
+    */
+    var sum = 0;
+    var count = 0;
+    for (let num = 1; num <= 100; num++) {
+      if (num%7 == 0) {
+        sum += num;   
+        count++;
+      }
+    }
+    console.log("总和为：" + sum);
+    console.log("个数为：" + count);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
