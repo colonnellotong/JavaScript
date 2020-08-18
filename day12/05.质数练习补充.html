@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+
+    // 测试如下程序的性能
+    // 再程序执行前，开启计时器
+    // console.time("")可以用来开启一个计时器
+    // 它需要一个字符串作为参数
+    // 通过math.sqrt()对一个数进行开方
+    console.time("test");
+    for (let i = 2; i <= 10000; i++) {
+      var flag = true;
+      for (let j = 2; j < Math.sqrt(i); j++) {
+        if (i % j == 0) {
+          flag = false;
+
+          //一旦进入判断，则证明i不可能是质数了，此时再执行已经没有意义了
+          break;
+        }
+      }
+      if (flag) {
+        // console.log(i);
+      }
+    }
+    console.timeEnd("test")
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
