@@ -12,7 +12,7 @@
       name:"孙悟空",
       age:18,
       gender:"男",
-      saynAME:function () {
+      sayName:function () {
         alert(this.name);
       }
     }
@@ -20,16 +20,16 @@
       使用工厂方法创建对象
         通过该方法可以大批量的创建对象
     */
-    function createPerson() {
+    function createPerson(name,age,gender) {
       //创建一个新对象
-      var obj = new Object(name , age , gender );
+      var obj = new Object();
 
       // 向对象中添加属性
 
       obj.name = name;
       obj.age = age;
       obj.gender = gender;
-      obj.sayName = function () {
+      obj.sayName = function(){
         alert(this.name)
       }
 
@@ -40,29 +40,36 @@
     /*
       用来创建狗的对象
     */
-    function creatDog(name , age) {
+    function creatDog(name,age){
       var obj = new Object();
 
       obj.name = name;
       obj.age = age;
-      obj.sayHello = function () {
+      obj.sayHello = function(){
         alert("汪汪");
       }
       return obj
     }
-    
-
-
 
 
     var obj2 = createPerson("孙悟空",18,"男");
     var obj3 = createPerson("猪八戒",28,"男");
     var obj4 = createPerson("沙和尚",38,"男");
 
-    console.log(obj2);
+
+    /*
+    * 使用工厂方法创建的对象，使用的构造函数都是Object
+    *   所以创建的对象都是Object这个类型
+    *   就导致
+    * */
+    var dog = creatDog("旺财",3);
+
+    console.log(obj);
+    console.log(obj4)
+    // console.log(obj2);
   </script>
 </head>
 <body>
-  
+
 </body>
 </html>
