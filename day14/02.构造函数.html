@@ -19,7 +19,7 @@
             this.age = age;
             this.gender = gender;
             //向对象中添加一个方法
-            this.sayName = fun;
+            // this.sayName = fun;
         }
 
         // 将sayName方法在全局作用域中定义
@@ -28,8 +28,13 @@
         * 将函数定义在全局作用域，污染了全局作用域的命名空间
         *   而且定义在全局作用域中，也很不安全
         * */
-        function fun() {
-            alert("Hello大家好，我是："+this.name);
+
+        // function fun() {
+        //     alert("Hello大家好，我是："+this.name);
+        // }
+        
+        Person.prototype.sayName = function () {
+            alert("Hello大家好，我是："+this.name)
         }
 
         // 创建一个Person实例
@@ -38,7 +43,7 @@
         per.sayName();
 
         var per2 = new Person("猪八戒",28,"男");
-        per.sayName();
+        per2.sayName();
         console.log(per.sayName == per2.sayName);
     </script>
 </head>
